@@ -1,0 +1,12 @@
+<script type="text/plain" data-filename="firebase.json">{
+"hosting": {
+"public": ".",
+"ignore": ["firebase.json", "**/.*", "**/node_modules/**", "functions/**"],
+"rewrites": [
+{ "source": "/api/**", "function": "api" }
+]
+},
+"functions": { "source": "functions" },
+"database": { "rules": "database.rules.json" }
+}
+</script>
