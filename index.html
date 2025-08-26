@@ -1,0 +1,50 @@
+<script type="text/plain" data-filename="index.html"><!doctype html>
+<div class=tile> Avg. Bet <div class=h>${hunt.currency} ${fmt(bonuses.length? (sumBet/bonuses.length):0)}</div></div>
+<div class=tile> Avg. Cost <div class=h>${hunt.currency} ${fmt(hunt.spent)}</div></div>
+<div class=tile> Req. X <div class=h>${bex}</div></div>
+<div class=tile> Total Cost <div class=h>${hunt.currency} ${fmt(hunt.spent)}</div></div>
+<div class=tile> Average bet <div class=h>${hunt.currency} ${fmt(bonuses.length? (sumBet/bonuses.length):0)}</div></div>
+<div class=tile> ROI <div class=h ${roi>=0?'class="ok"':'class="bad"'}>${roi}%</div></div>
+<div class=tile>
+<div class=small>Progress</div>
+<div class=progress><span style="width:${(progress*100).toFixed(0)}%;background:linear-gradient(90deg,#6aa6ff,#7dd3fc)"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class=card style="margin-top:12px;display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:center">
+<div>
+<div class=h style="margin-bottom:8px">Slots</div>
+<table class=table>
+<thead><tr><th>#</th><th>Slot</th><th>Provider</th><th>Bet</th><th>Multi</th><th>Win</th></tr></thead>
+<tbody>
+${bonuses.map((b,i)=>`<tr><td>${i+1}</td><td>${b.slot}</td><td>${b.provider||''}</td><td>${hunt.currency} ${fmt(b.bet)}</td><td>${b.multi? b.multi+'x':'0x'}</td><td>${b.win? hunt.currency+' '+fmt(b.win): '-'}</td></tr>`).join('')}
+</tbody>
+</table>
+</div>
+<div class=panel>
+<div style="font-weight:800;margin-bottom:6px">Provider Split</div>
+<canvas id=p width=200 height=200 style="display:block;margin:auto"></canvas>
+</div>
+</div>
+
+
+<div class=card style="margin-top:12px">
+<div class=h>Hunts</div>
+<div class=small>Back to <a href="/">all hunts</a></div>
+</div>
+</div>`
+
+
+// draw providers pie
+const byProv = {}
+bonuses.forEach(b=>{byProv[b.provider||'Other']=(byProv[b.provider||'Other']||0)+1})
+pie(document.getElementById('p'), Object.entries(byProv).map(([k,v])=>({label:k,value:v})))
+}
+</script>
+</head>
+<body><div id=root></div></body>
+</html></script>
