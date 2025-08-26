@@ -1,0 +1,7 @@
+<script type="text/plain" data-filename="database.rules.json">{
+"rules": {
+".read": true,
+".write": false
+}
+}
+</script>
