@@ -1,0 +1,28 @@
+<script type="text/plain" data-filename="assets/styles.css">:root{--bg:#0b0f19;--card:#121725;--panel:#161c2e;--muted:#93a1bd;--text:#e8ecff;--acc:#6aa6ff;--ok:#34d399;--bad:#f87171;--line:#1e2740}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+.container{max-width:1280px;margin:0 auto;padding:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tile{background:#0f1424;border:1px solid var(--line);border-radius:12px;padding:12px}
+.progress{height:10px;border-radius:999px;background:#0f1424;overflow:hidden}
+.progress>span{display:block;height:100%}
+.card{background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.h{font-weight:700}
+.btn{background:var(--acc);border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.input{background:#0b1220;border:1px solid #1b2236;color:#fff;padding:10px;border-radius:10px;width:100%}
+.grid{display:grid;gap:12px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px 10px;border-bottom:1px solid #1b2236}
+.kpi{display:flex;gap:12px;flex-wrap:wrap}
+.kpi .tile{background:#0b1220;border:1px solid #1b2236;border-radius:12px;padding:12px 14px;min-width:140px}
+.bad{color:var(--bad)}.ok{color:var(--ok)}
+.small{color:var(--muted);font-size:12px}
+.overlay{background:transparent;color:#fff;font-family:Inter,system-ui,Arial}
+.overlay .wrap{padding:16px;backdrop-filter:blur(6px)}
+.overlay .row{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.overlay .pill{background:rgba(0,0,0,.5);padding:6px 10px;border-radius:999px}
+.overlay .img{max-height:160px;object-fit:contain;border-radius:12px}
+</script>
